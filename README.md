@@ -34,9 +34,10 @@ NLP_Team_13 is a project focused on web scraping, data preparation, and de-dupli
 - This script takes a few seconds (~10 seconds for ~11 GB data i.e. ~14000 files), so wait for it to finish even if you don't see any activity.
 
 ## Usage
-1. Run the scripts sequentially in the order mentioned above.
-2. Ensure all necessary dependencies (e.g., Selenium, requests) are installed.
-3. Adjust the number of workers or connection pools if needed for better performance.
+1. **Setup: Run NLP_Team_13/scripts/requirements.txt to install the required dependencies.**
+2. Supported python version is 3.8 or above `you may need to make changes to run on older versions`
+3. Run the scripts sequentially in the order mentioned above.
+4. Adjust the number of workers or connection pools if needed for better performance.
 
 ## Output
 - **Initial URLs**: Extracted URLs for each keyword.
