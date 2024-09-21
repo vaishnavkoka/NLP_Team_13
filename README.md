@@ -17,7 +17,8 @@ NLP_Team_13 is a project focused on web scraping, data preparation, and de-dupli
 
 - This script takes the output from the previous step and scrapes additional URLs using the `requests` module.
 - It processes the HTML responses and extracts all unique URLs.
-- The script uses 1000 concurrent workers to speed up the process and stores all the unique URLs in a text file.
+- The script uses 1000 workers by default (this number can be adjusted) and a pool of 50 TCP connections for faster scraping.
+- It stores all the unique URLs in a text file.
 
 ### 3. Scrape Web Pages for Hindi Content
 **Script**: `NLP_Team_13/scripts/scraping.py`
