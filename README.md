@@ -30,8 +30,8 @@ NLP_Team_13 is a project focused on web scraping, data preparation, and de-dupli
 ### 4. Deduplicate the Dataset
 **Script**: `NLP_Team_13/scripts/deduplication.py`
 
-- This script removes duplicate text files from the dataset.
 - It takes the path of the folder containing the scraped files and generates a `unique_files.txt`, which lists the absolute paths of all unique files after deduplication.
+- This script takes a few seconds (~10 seconds for ~11 GB data i.e. ~14000 files), so wait for it to finish even if you don't see any activity.
 
 ## Usage
 1. Run the scripts sequentially in the order mentioned above.
