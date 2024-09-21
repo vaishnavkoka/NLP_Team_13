@@ -1,5 +1,3 @@
-# Add progress and error logging for better visibility
-
 import os
 import re
 import pandas as pd
@@ -14,7 +12,7 @@ from bs4 import BeautifulSoup
 import aiofiles
 from urllib.parse import urljoin
 
-# Set up directory as before
+# Set up directory 
 directory = sys.argv[0].split('.')[-2].replace('\\','')
 path = directory
 for i in range(1, 10000):
