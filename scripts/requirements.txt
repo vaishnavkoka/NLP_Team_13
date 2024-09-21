@@ -1,0 +1,9 @@
+datasketch
+tqdm
+selenium
+aiohttp
+aiofiles
+beautifulsoup4
+pandas
+concurrent.futures; python_version < "3.7"
+uuid
