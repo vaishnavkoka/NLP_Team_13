@@ -9,7 +9,7 @@ total_size_before_deduplication = 0
 total_size_after_deduplication = 0
 
 def get_files_from_folders(folders):
-    """Collects all file paths from the provided list of folders."""
+    """Collects all file paths from the folders list."""
     file_paths = []
     for folder in tqdm(folders, total=len(folders), desc="getting all file paths"):
         for root, _, files in os.walk(folder):
@@ -19,7 +19,7 @@ def get_files_from_folders(folders):
     return file_paths
 
 def compute_minhash(file_path, num_perm=128):
-    """Compute MinHash incrementally by reading file in chunks."""
+    """Compute MinHash incrementally by reading file"""
     m = MinHash(num_perm=num_perm)
     try:
         text = ''
