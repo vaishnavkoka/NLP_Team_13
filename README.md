@@ -77,5 +77,5 @@ The initial dataset size before cleaning was 249.800 GB; after cleanup, it came 
   - **Vaishnav Koka** collected data from existing datasets **|** documented code flow in the readme file **|** code for deduplication pipeline for exact document match and SimHash.
   - **Yash Sahu** collected bad words **|** code for data-cleanup pipeline **|** code for SHA256 deduplication
   - **Ramanand** documented code flow in the readme file **|** code for data scraping pipeline **|** Source-Data mapping *(result.pdf)* **|** code for MinHash deduplication pipeline.
-- Our team was able to parallelize the data scraping part and add comments *(only some parts)* to the code with the help of ChatGPT
+- Our team was able to parallelize the data scraping part and add comments *(only some parts)* to the code with the help of online available knowledge base
 
