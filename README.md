@@ -51,13 +51,13 @@ The initial dataset size before cleaning was 249.800 GB; after cleanup, it came 
 - It creates 2 files
   - CSV file: it contains 3 columns, domain, no. of articles, and total size scraped from this domain.
   - PDF file: it is the same as a CSV file, just in the form of a table for readability
-  - Both PDF and CSV are created at the same location of the URLs file
+  - Both PDF and CSV are created at the same location of the URL file
 - ![image](https://github.com/user-attachments/assets/e49ad47e-ae5c-4690-b294-210084d19e57)
 
 
 ## Usage
 1. **Setup: Run NLP_Team_13/scripts/requirements.txt to install the required dependencies.**
-2. Supported Python version is 3.8 or above `you may need to make changes to run on older versions`
+2. Supported Python version is 3.8 or above `you may need to make changes to run on older versions.`
 3. Run the scripts sequentially in the order mentioned above.
 4. Adjust the number of workers or connection pools if needed for better performance.
 
@@ -66,11 +66,16 @@ The initial dataset size before cleaning was 249.800 GB; after cleanup, it came 
 - **Unique URLs**: Additional URLs scraped from the initial list.
 - **Scraped Files**: Text files stored locally, filtered by Hindi content.
 - **Deduplicated Files**: Paths of all unique files post-deduplication.
-- **Sources Information**: 
 
 ![image](https://github.com/user-attachments/assets/15b23d0c-3c65-4cb6-83ba-5fe54fa34217)
 
 
 ## Acknowledgement
-
+- Contributions:
+  - **Isha Jain** helped collect data from existing datasets **|** code for data scraping pipeline **|** proposed parallelization in the data scrapping
+  - **Keshav Krishna** helped collect bad words **|** ideate the initial data scraping methodology **|** code for data-cleanup pipeline.
+  - **Vaishnav Koka** helped collect data from existing datasets **|** document code flow in the readme file **|** code for deduplication pipeline for exact document match and SimHash.
+  - **Yash Sahu** helped collect bad words **|** code for data-cleanup pipeline **|** code for SHA256 deduplication
+  - **Ramanand** helped write document code flow in the readme file **|** code for data scraping pipeline **|** Source-Data mapping *(result.pdf)* **|** MinHash deduplication pipeline.
+- Our team was able to parallelize the data scraping part and add comments *(only some parts)* to the code with the help of ChatGPT
 
