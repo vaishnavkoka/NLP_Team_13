@@ -7,10 +7,10 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 folder = "/mnt/HDFS1/language_nlp/nlp_hindi_team_13/scraping8-29/urls"
 csv_file_path = folder+'/updated_urls.csv'
-df = pd.read_csv(csv_file_path, error_bad_lines=False)
+df = pd.read_csv(csv_file_path, error_bad_lines=False) # skip those lines where url is malformed
 df.columns = ['file_name', 'domain', 'url']
 
-result = df.groupby('domain')['file_name'].agg(['count']).reset_index()
+result = df.groupby('domain')['file_name'].agg(['count']).reset_index() # group files by domain name
 result['total_size_MB'] = 0
 
 for index, row in result.iterrows():
@@ -22,19 +22,19 @@ for index, row in result.iterrows():
             total_size += os.path.getsize(file_path)
     result.at[index, 'total_size_MB'] = total_size
 
-result['total_size_MB'] = result['total_size_MB'] // (1024 * 1024)
-result_sorted = result.sort_values(by='domain', ascending=True)
+result['total_size_MB'] = result['total_size_MB'] // (1024 * 1024) # change data scraped from each domain to GB
+result_sorted = result.sort_values(by='domain', ascending=True) # sort dataframe by domain name in ascending order
 
 total_domains = result_sorted.shape[0]
 total_files = result_sorted['count'].sum()
 total_size_MB = result_sorted['total_size_MB'].sum()
-summary_row = pd.DataFrame({'domain': ['Total: '+ str(total_domains)], 'count': [total_files], 'total_size_MB': [total_size_MB]})
+summary_row = pd.DataFrame({'domain': ['Total: '+ str(total_domains)], 'count': [total_files], 'total_size_MB': [total_size_MB]}) # summary of total number of domains, article and size
 result_final = pd.concat([result_sorted, summary_row], ignore_index=True)
 
 print(result_final)
 
 output_csv_path = folder+'/result.csv'
-result_final.to_csv(output_csv_path, index=False)
+result_final.to_csv(output_csv_path, index=False) # save dataframe to CSV
 print(f"Results saved to {output_csv_path}")
 
 # Create PDF
