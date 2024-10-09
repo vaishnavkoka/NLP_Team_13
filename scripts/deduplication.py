@@ -53,19 +53,17 @@ import concurrent.futures
 from tqdm import tqdm
 
 def minhash_computation(file_paths, num_perm=128, threshold=0.75):
-    """Compute MinHashes for files in parallel and perform deduplication."""
+    # MinHash computed in parallel, executer.map() preserves the order of input and output
     minhashes = []
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        results = list(tqdm(executor.map(compute_minhash, file_paths), total=len(file_paths), desc="MinHash computation"))
+        results = list(tqdm(executor.map(compute_minhash, file_paths), total=len(file_paths), desc="MinHash computation")) 
     return deduplicate_files(file_paths, results, threshold, num_perm)
 
 
 if __name__ == "__main__":
     # List of folders to process
     folders = [
-        '/home/hindi_nlp/dataset/hindi_corpus/Corpus',
-        '/home/hindi_nlp/dataset/hindi_corpus/hindi_asthetic_Corpus',
-        '/home/hindi_nlp/scrap/scraping8-2'
+        '/home/hindi_nlp/scrap/scraping8-29'
     ]
 
     # Get all file paths from the folders
