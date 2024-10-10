@@ -1,4 +1,7 @@
 Prepare the table with the statistics (total articles, GBs) and datasets before and after deduplication. [10 pts]
+
+We have implemented below de-duplication methods
+
 1. MinHash Deduplication
 
 | De-duplication Stage     | Total Articles | Volume in GBs |
