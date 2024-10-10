@@ -37,11 +37,23 @@ The initial dataset size before cleaning was 249.800 GB; after cleanup, it came 
 
 
 ### 5. Deduplicate the Dataset
-**Script**: `NLP_Team_13/scripts/deduplication.py (MinHash + MinHashLSH)`
+**Script**: `deduplication.py (MinHash + MinHashLSH)`
 
 - It takes the path of the folder containing the scraped files and generates a `unique_files.txt,` which lists the absolute paths of all unique files after deduplication.
 - This script takes some time to complete (~100 minutes for ~250 GB data, i.e., ~775000 files), so wait for it to finish; there are progress bars added so that we can track the progress of this work.
 - ![image](https://github.com/user-attachments/assets/76b53016-39ab-466e-9155-d33543acf187)
+
+**Script**: `md5-exact-match-removal.py`
+- It takes the path of the folder containing scrapped files and generates a `unique_files_md5_extact_match.txt`
+- This Deduplication method runs in the least time with the order of O(n) time complexity because we create a set of md5 hashes, which automatically removes duplicate hashes.
+- ![image](https://github.com/user-attachments/assets/c7a88ff3-f472-44f5-beb7-dfd6393c68f3)
+
+**Script**: `SHA256-deduplication.py`
+- It takes the path of the folder containing the scraped files and generates a `unique_files.txt,` which lists the absolute paths of all unique files after deduplication.
+- This is similar to other deduplication algorithms, which involve hashing; the difference here is that we have 256 bits in comparison space.
+- ![image](https://github.com/user-attachments/assets/ef80981f-22c9-4ca5-8b4a-f43d3528a8f9)
+
+
 
 ### 6. Get Data Sources
 **Script**: `get_data_sources.py`
